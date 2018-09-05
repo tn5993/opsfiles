@@ -29,7 +29,7 @@ addons:
 
 instance_groups:
 - name: harbor-app
-  azs: [az1]
+  azs: [z1]
   instances: 1
   jobs:
   - name: harbor
