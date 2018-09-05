@@ -60,7 +60,7 @@ instance_groups:
     ephemeral_disk_size: 10240
   persistent_disk: 20480
   networks:
-  - name: deployment-network
+  - name: default
 
 update:
   canaries: 2
