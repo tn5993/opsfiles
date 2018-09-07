@@ -17,6 +17,7 @@ stemcells:
 
 instance_groups:
 - name: dummy
+  azs: [z1]
   instances: 1
   vm_type: default
   stemcell: ubuntu
