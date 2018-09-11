@@ -54,10 +54,7 @@ instance_groups:
     consumes:
       harbor_reference: {from: harbor}
   stemcell: default
-  vm_resources:
-    cpu: 2
-    ram: 2048
-    ephemeral_disk_size: 10240
+  vm_type: large
   persistent_disk: 20480
   networks:
   - name: default
