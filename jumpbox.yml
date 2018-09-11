@@ -1,0 +1,39 @@
+---
+# BOSH Director must have Cloud Config with the following properties:
+# - vm_type: tiny
+# - network: manual
+
+name: ((deployment_name))
+
+releases:
+- name: jumpbox
+  url: https://bosh.io/d/github.com/cloudfoundry/os-conf-release?v=20.0.0
+  sha1: a60187f038d45e2886db9df82b72a9ab5fdcc49d
+
+stemcells:
+- alias: ubuntu
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: jumpbox
+  azs: [z1]
+  instances: 1
+  vm_type: large
+  stemcell: ubuntu
+  networks:
+  - name: default
+  jobs:
+  - name: user_add
+    release: os-conf
+    properties:
+      users:
+      - name: jumpbox
+        crypted_password: $6$saltysalt$eF06vmEKaMhOr8jcnyfJJGuaU/Khq3DpH4M/7T.ziGNjhEEv3o9tgaX5VciMGAbgfE0CH9XrcpHi9kgmVv1Z2.
+
+update:
+  canaries: 1
+  max_in_flight: 6
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
