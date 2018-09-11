@@ -29,7 +29,7 @@ instance_groups:
     properties:
       users:
       - name: jumpbox
-        crypted_password: $6$saltysalt$eF06vmEKaMhOr8jcnyfJJGuaU/Khq3DpH4M/7T.ziGNjhEEv3o9tgaX5VciMGAbgfE0CH9XrcpHi9kgmVv1Z2.
+        crypted_password: $6$12345678$I8tr4xFAC6/TtjYWdp0LWEjQre2LcYm2jdSMNLQDIyqRv.cKo7KMD5/HpzVVFKpUQlIekr/Vw.OdImtRM85fg/
 
 update:
   canaries: 1
